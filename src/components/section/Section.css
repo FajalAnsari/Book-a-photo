@@ -1,0 +1,30 @@
+.how-it-box{
+    height: 290px;
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 1rem 1rem rgb(0 0 0 / 10%);
+    margin-bottom: 3rem;
+    border-bottom-right-radius: 10%;
+    border-top-left-radius: 10%;
+    padding: 30px;
+    
+}
+.how-it-box h4{
+    margin: 10px;
+}
+.how-it-box p{
+    text-align: justify;
+}
+.circle{
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    background-color: #5cb85c;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+.circle i{
+    font-size: 36px;
+    color: white;
+    margin: 23px auto;
+}

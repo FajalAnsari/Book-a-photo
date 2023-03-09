@@ -1,0 +1,38 @@
+.hero-section{
+    background-image: url(../images/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 95%;
+    height: 500px;
+    width: 100%;
+
+}
+.cat-search{
+    margin-top: 200px;
+}
+.cat-search h1{
+    color: white;
+    font-family: 'Encode Sans SC', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
+}
+
+.cat-search p{
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* services icone  */
+.services-icone{
+    height: 120px;
+
+}
+.services-icone img{
+    height: 50px;
+    margin: 20px auto;
+}
+.icon-box:hover{
+    background-color: rgba(153, 146, 146, 0.664);
+}
