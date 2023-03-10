@@ -1,0 +1,38 @@
+
+.featured-occasion-container{
+    height: 450px;
+}
+.featured-occasion-container span{
+    display: inline-block;
+    margin-left: 250px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+.card{
+    border: none;
+    border-radius: 2%;
+}
+.media-scroller-occasion{
+    display: grid;
+    gap: 15px;
+    grid-auto-flow: column;
+    grid-auto-columns: 21%;
+    overflow-x: auto;
+
+
+}
+
+@media only screen and (max-width: 600px) {
+    .media-scroller-occasion{
+        grid-auto-columns: 100%;
+    }
+}
+
+.medial-element-occasion{
+    height: 320px;
+    width: 300px;
+    margin: 10px;
+    box-shadow: 0 1rem 1rem rgb(0 0 0 / 10%);
+    border-radius: 2%;
+}

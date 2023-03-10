@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import "../Hero/Hero.css";
 import trevelicone from "../images/icones/travel-luggage.png";
 import fashionicon from "../images/icones/fashion.png";
@@ -6,15 +7,46 @@ import compercialicon from "../images/icones/hamburger.png";
 import natureicon from "../images/icones/landscape.png";
 import weddingicon from "../images/icones/wedding-rings.png";
 
+const texts = ['Anniversary', 'Wedding', 'Commercial'];
+
+
 
 function Hero() {
+    const [currentText, setCurrentText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
+  const [shouldWait, setShouldWait] = useState(false);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+        if (shouldWait) {
+          setShouldWait(false);
+          setCurrentLetterIndex(0);
+          setCurrentText('');
+          setCurrentIndex((currentIndex + 1) % texts.length);
+          return;
+        }
+  
+        if (currentLetterIndex === texts[currentIndex].length) {
+          setShouldWait(true);
+          return;
+        }
+  
+        const letter = texts[currentIndex][currentLetterIndex];
+        setCurrentText(currentText => currentText + letter);
+        setCurrentLetterIndex(currentLetterIndex + 1);
+      }, 200);
+  
+      return () => clearInterval(intervalId);
+    }, [currentIndex, currentLetterIndex, shouldWait]);
+
     return (
         <>
             <div className="hero-section">
                 <div className='row  mt-5 w-50 mx-auto'>
                     <div className='col-md-8  mx-auto cat-search text-center'>
                         <h1>Book A Shoot</h1>
-                        <p>Book <span className='text-success'>Pashion |</span> PhotoShoot Today</p>
+                        <p>Book <span className='text-success'>{currentText} |</span> PhotoShoot Today</p>
                         <form className='d-flex'>
                             <input class="form-control m-2 p-2" type="text" placeholder='Select category' />
                             <input class="form-control m-2 p-2" type="text" placeholder='Enter City' />
@@ -68,6 +100,4 @@ function Hero() {
 }
 
 export default Hero;
-
-
 

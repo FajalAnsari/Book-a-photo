@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Navabar.css";
 
 function Navbar() {
   return (
@@ -6,9 +7,9 @@ function Navbar() {
     <div>
     <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><span><i class="bi bi-camera2 ms-4"></i></span> Book a Photo</a>
+    <a class="navbar-brand" href="/"><span className='logo'><i class="bi bi-camera2 ms-4"></i></span> <span className='logo-text'>Book a Photo</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-      <span class="navbar-toggler-icon"></span>
+      <span id="menuicone" class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">

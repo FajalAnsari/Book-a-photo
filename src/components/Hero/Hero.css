@@ -23,6 +23,12 @@
     color: white;
     text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
 }
+.cat-search span{
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
+    font-weight: 700;
+}
 
 /* services icone  */
 .services-icone{
@@ -36,3 +42,26 @@
 .icon-box:hover{
     background-color: rgba(153, 146, 146, 0.664);
 }
+
+
+/* typing */
+#typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 0.15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  }
+  

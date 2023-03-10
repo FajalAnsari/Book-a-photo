@@ -5,6 +5,10 @@ import Section from './components/section/Section';
 import "../src/App.css";
 import FeaturedWedding from './components/Featured-wedding/FeaturedWedding';
 import FeaturedBabies from './components/Featured-Babies/FeaturedBabies';
+import FeaturedOccasion from './components/Featured-Occasion/FeaturedOccasion';
+import FeaturedFood from './components/Featured-Food/FeaturedFood';
+import Testimonial from './components/Testimonial/Testimonial';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -15,6 +19,10 @@ function App() {
     <Section />
     <FeaturedWedding/>
     <FeaturedBabies />
+    <FeaturedOccasion />
+    <FeaturedFood/>
+    <Testimonial/>
+    <Footer/>
     </>
   );
 }

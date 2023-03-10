@@ -5,7 +5,7 @@ import featuredimg2 from "../images/featured-img/featured2.jpg";
 import featuredimg3 from "../images/featured-img/featured13.jpg";
 import featuredimg4 from "../images/featured-img/featured14.jpg";
 
-function FeaturedWedding() {
+function FeaturedBabies() {
   return (
     <>
       <div className="featured-babies-container mt-5 bg-light">
@@ -129,4 +129,4 @@ function FeaturedWedding() {
   );
 }
 
-export default FeaturedWedding;
+export default FeaturedBabies;
