@@ -9,7 +9,7 @@ function FeaturedWedding() {
   return (
     <>
       <div className="featured-wedding-container mb-5 bg-light">
-      <span> Featured Wedding Photographers</span>
+      <span>Featured Wedding Photographers</span>
         <div className='media-scroller w-75 mx-auto'>
           <div className="medial-element">
           <div className='card'>
@@ -17,7 +17,7 @@ function FeaturedWedding() {
               <div className="card-body">
                 <h5 className="card-title">Photomatic</h5>
                 <p className="card-text">
-                  <i className="bi bi-geo-alt me-2 text-success"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-success"></i>70050410014<br />
+                  <i className="bi bi-geo-alt me-2 text-warning"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-warning"></i>70050410014<br/>
                 </p>
               </div>
             </div>
@@ -28,7 +28,7 @@ function FeaturedWedding() {
               <div className="card-body">
                 <h5 className="card-title">Photomatic</h5>
                 <p className="card-text">
-                  <i className="bi bi-geo-alt me-2 text-success"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-success"></i>70050410014<br />
+                  <i className="bi bi-geo-alt me-2 text-warning"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-warning"></i>70050410014<br />
                 </p>
               </div>
             </div>
@@ -39,7 +39,7 @@ function FeaturedWedding() {
               <div className="card-body">
                 <h5 className="card-title">Photomatic</h5>
                 <p className="card-text">
-                  <i className="bi bi-geo-alt me-2 text-success"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-success"></i>70050410014<br />
+                  <i className="bi bi-geo-alt me-2 text-warning"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-warning"></i>70050410014<br />
                 </p>
               </div>
             </div>
@@ -50,7 +50,7 @@ function FeaturedWedding() {
               <div className="card-body">
                 <h5 className="card-title">Photomatic</h5>
                 <p className="card-text">
-                  <i className="bi bi-geo-alt me-2 text-success"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-success"></i>70050410014<br />
+                  <i className="bi bi-geo-alt me-2 text-warning"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-warning"></i>70050410014<br />
                 </p>
               </div>
             </div>
@@ -61,7 +61,7 @@ function FeaturedWedding() {
               <div className="card-body">
                 <h5 className="card-title">Photomatic</h5>
                 <p className="card-text">
-                  <i className="bi bi-geo-alt me-2 text-success"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-success"></i>70050410014<br />
+                  <i className="bi bi-geo-alt me-2 text-warning"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-warning"></i>70050410014<br />
                 </p>
               </div>
             </div>
@@ -72,7 +72,7 @@ function FeaturedWedding() {
               <div className="card-body">
                 <h5 className="card-title">Photomatic</h5>
                 <p className="card-text">
-                  <i className="bi bi-geo-alt me-2 text-success"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-success"></i>70050410014<br />
+                  <i className="bi bi-geo-alt me-2 text-warning"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-warning"></i>70050410014<br />
                 </p>
               </div>
             </div>
@@ -83,7 +83,7 @@ function FeaturedWedding() {
               <div className="card-body">
                 <h5 className="card-title">Photomatic</h5>
                 <p className="card-text">
-                  <i className="bi bi-geo-alt me-2 text-success"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-success"></i>70050410014<br />
+                  <i className="bi bi-geo-alt me-2 text-warning"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-warning"></i>70050410014<br />
                 </p>
               </div>
             </div>
@@ -94,7 +94,7 @@ function FeaturedWedding() {
               <div className="card-body">
                 <h5 className="card-title">Photomatic</h5>
                 <p className="card-text">
-                  <i className="bi bi-geo-alt me-2 text-success"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-success"></i>70050410014<br />
+                  <i className="bi bi-geo-alt me-2 text-warning"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-warning"></i>70050410014<br />
                 </p>
               </div>
             </div>
@@ -105,7 +105,7 @@ function FeaturedWedding() {
               <div className="card-body">
                 <h5 className="card-title">Photomatic</h5>
                 <p className="card-text">
-                  <i className="bi bi-geo-alt me-2 text-success"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-success"></i>70050410014<br />
+                  <i className="bi bi-geo-alt me-2 text-warning"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-warning"></i>70050410014<br />
                 </p>
               </div>
             </div>
@@ -116,7 +116,7 @@ function FeaturedWedding() {
               <div className="card-body">
                 <h5 className="card-title">Photomatic</h5>
                 <p className="card-text">
-                  <i className="bi bi-geo-alt me-2 text-success"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-success"></i>70050410014<br />
+                  <i className="bi bi-geo-alt me-2 text-warning"></i>Mumbai, Maharastra<br /><i className="bi bi-telephone me-2 text-warning"></i>70050410014<br />
                 </p>
               </div>
             </div>

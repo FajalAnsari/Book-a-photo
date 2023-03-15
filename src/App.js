@@ -1,28 +1,21 @@
+
 import React from 'react';
-import Hero from './components/Hero/Hero';
-import Navbar from './components/Navbar/Navbar';
-import Section from './components/section/Section';
-import "../src/App.css";
-import FeaturedWedding from './components/Featured-wedding/FeaturedWedding';
-import FeaturedBabies from './components/Featured-Babies/FeaturedBabies';
-import FeaturedOccasion from './components/Featured-Occasion/FeaturedOccasion';
-import FeaturedFood from './components/Featured-Food/FeaturedFood';
-import Testimonial from './components/Testimonial/Testimonial';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
+import Home from "./components/Home"
+import Photographers from './components/Photographers/Photographers';
 
 
 function App() {
   return (
     <>
-    <Navbar/>
-    <Hero />
-    <Section />
-    <FeaturedWedding/>
-    <FeaturedBabies />
-    <FeaturedOccasion />
-    <FeaturedFood/>
-    <Testimonial/>
-    <Footer/>
+    <Router>
+    <Routes>
+      <Route>
+        <Route path='/' element={<Home/>}/>
+        <Route path="/photographers" element={<Photographers />} />
+      </Route>
+    </Routes>
+    </Router>
     </>
   );
 }

@@ -1,30 +1,32 @@
 import React from 'react';
 import "./Navabar.css";
+import logo from "../images/icones/Logo.png"
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
     <>
     <div>
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/"><span className='logo'><i class="bi bi-camera2 ms-4"></i></span> <span className='logo-text'>Book a Photo</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+    <nav className="navbar navbar-dark bg-dark fixed-top">
+  <div className="container-fluid">
+    <a className="navbar-brand" href="/"><span className='logo'><img src={logo} alt="logo"/></span> </a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span id="menuicone" class="navbar-toggler-icon"></span>
     </button>
-    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+    <div className="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Book a photo</h5>
+        <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">Book a photo</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Explore</a>
+      <div className="offcanvas-body">
+        <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li className="nav-item">
+            <Link to="/photographers" className="nav-link active" aria-current="page">Explore</Link>
           </li>
         </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn btn-success" type="submit">Search</button>
+        <form className="d-flex mt-3" role="search">
+          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button className="btn btn-success" type="submit">Search</button>
         </form>
       </div>
     </div>
