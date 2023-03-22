@@ -9,13 +9,12 @@ function Featuredaround() {
   const box = document.querySelector(".media-scroller-around");
   const handlePre = () => {
     let width = box.clientWidth;
-    alert(width);
+    console.log(width)
     box.scrollLeft = box.scrollLeft - width;
-    
   }
   const handleNext = () => {
     let width = box.clientWidth;
-    // alert(width)
+    console.log(width)
     box.scrollLeft = box.scrollLeft + width;
   }
   return (
