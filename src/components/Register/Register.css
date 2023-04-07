@@ -10,3 +10,9 @@
     margin: 20px auto;
     box-shadow: 11px 25px 24px 7px rgba(0,0,0,0.1);
 }
+b{
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: #ff3300;
+    text-align: center;
+}

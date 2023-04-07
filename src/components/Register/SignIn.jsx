@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import './Register.css';
-
+import { signInWithEmailAndPassword } from "firebase/auth";
+import {  useNavigate  } from "react-router-dom";
+import {  auth } from "../../firebase";
+import { toast } from "react-toastify";
 function Register() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -19,6 +23,20 @@ function Register() {
   const handleFormSubmit = event => {
     event.preventDefault();
     // Write logic to submit the form data to the server
+    if(username!=="" && password!==""){
+      signInWithEmailAndPassword(auth, username, password).then(()=> {
+        navigate('/dashboard');
+  
+      })
+      .catch((err)=>{
+        toast.error(err);
+      })
+      
+    }
+    else{
+      toast.error("Fill the form field");
+    }
+   
   };
   return (
     <>
@@ -41,6 +59,8 @@ function Register() {
                     onChange={handleUsernameChange}
                   />
                 </div>
+                 {/* error message show */}
+                 <span></span>
                 <div className='form-group'>
                   <input
                     className='form-control mx-auto m-3 p-2'
@@ -50,6 +70,8 @@ function Register() {
                     onChange={handlePasswordChange}
                   />
                 </div>
+                 {/* error message show */}
+                 <span></span>
                 <div className='form-group'>
                   <button className='form-control mx-auto m-3 bg-warning p-2'>Login</button>
                 </div>

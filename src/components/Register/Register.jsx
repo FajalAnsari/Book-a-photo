@@ -3,8 +3,18 @@ import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import './Register.css';
-
+import {  createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {  auth } from "../../firebase";
+import {  useNavigate  } from "react-router-dom";
+import { toast } from "react-toastify"; 
+// createUserWithEmailAndPassword(auth, email, password)
+// const auth = getAuth(app);
 function Register() {
+  const navigate = useNavigate();
+  
+
+  // error messages show
+  const [errorMsg, setErrorMsg] = useState("");
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,6 +39,35 @@ function Register() {
   const handleFormSubmit = event => {
     event.preventDefault();
     // Write logic to submit the form data to the server
+    if(!username || !email || !password || !confirmPassword){
+      setErrorMsg("Fill all the fields");
+      return;
+    }
+    else{
+      if(password === confirmPassword){
+        createUserWithEmailAndPassword(auth, email, password).then(async (res)=>{
+          const user =res.user;
+         await updateProfile(user, {displayName: username,});
+          toast.success("Your Account has been created");
+          navigate('/signin');
+        }).catch((err)=> {
+          toast.error(err);
+          
+        })
+        
+      }
+      else{
+        toast.error("Password and confirm password will be same");
+        setErrorMsg("Password and confirm password will be same");
+      }
+
+    }
+     
+    
+      
+
+    
+    
   };
   return (
     <>
@@ -51,6 +90,8 @@ function Register() {
                     onChange={handleUsernameChange}
                   />
                 </div>
+                {/* error message show */}
+                <span></span>
                 <div className='form-group'>
                   <input
                     className='form-control mx-auto m-3 p-2'
@@ -60,6 +101,8 @@ function Register() {
                     onChange={handleEmailChange}
                   />
                 </div>
+                 {/* error message show */}
+                 <span></span>
                 <div className='form-group'>
                   <input
                     className='form-control mx-auto m-3 p-2'
@@ -69,6 +112,8 @@ function Register() {
                     onChange={handlePasswordChange}
                   />
                 </div>
+                 {/* error message show */}
+                 <span></span>
                 <div className='form-group'>
                   <input
                     className='form-control mx-auto m-3 p-2'
@@ -78,6 +123,10 @@ function Register() {
                     onChange={handleConfirmPasswordChange}
                   />
                 </div>
+                 {/* error message show */}
+                 <span></span>
+                {/* message show */}
+                 <b>{errorMsg}</b> 
                 <div className='form-group'>
                   <button className='form-control mx-auto m-3 bg-warning p-2'>Create Account</button>
                 </div>
