@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth";
 // import { getFireStore } from 'firebase/firestore';
 const firebaseConfig = {
-  apiKey: "AIzaSyDmpiKaWsZ7BdAjMX-hqyIrhT0_DAeWQRE",
-  authDomain: "book-a-photo.firebaseapp.com",
-  projectId: "book-a-photo",
-  storageBucket: "book-a-photo.appspot.com",
-  messagingSenderId: "320080193064",
-  appId: "1:320080193064:web:acb8152f436f364717771d"
+  apiKey: "AIzaSyAADLjPfRS62MCrKy9JqRvJ0I_KgSPKgbA",
+  authDomain: "bookaphoto-6d984.firebaseapp.com",
+  projectId: "bookaphoto-6d984",
+  storageBucket: "bookaphoto-6d984.appspot.com",
+  messagingSenderId: "735679506302",
+  appId: "1:735679506302:web:068a2e797bef1ac6a7752f"
 };
 
 // Initialize Firebase

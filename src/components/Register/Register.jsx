@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import './Register.css';
-import {  createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {  createUserWithEmailAndPassword  } from "firebase/auth";
 import {  auth } from "../../firebase";
 import {  useNavigate  } from "react-router-dom";
 import { toast } from "react-toastify"; 
 // createUserWithEmailAndPassword(auth, email, password)
 // const auth = getAuth(app);
 function Register() {
+  
   const navigate = useNavigate();
   
 
@@ -19,7 +20,7 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-
+  let item ={username,email,password}
   const handleUsernameChange = event => {
     setUsername(event.target.value);
   };
@@ -45,9 +46,13 @@ function Register() {
     }
     else{
       if(password === confirmPassword){
-        createUserWithEmailAndPassword(auth, email, password).then(async (res)=>{
-          const user =res.user;
-         await updateProfile(user, {displayName: username,});
+        
+           localStorage.setItem("user",JSON.stringify(item));
+        createUserWithEmailAndPassword(auth, email, password).then( ()=>{
+       
+
+        //   const user =res.user;
+        //  await updateProfile(user, {displayName: username,});
           toast.success("Your Account has been created");
           navigate('/signin');
         }).catch((err)=> {

@@ -10,20 +10,21 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {  auth } from "./firebase";
 import { useEffect, useState } from 'react';
+import Protected from './Protected';
 
 function App() {
-  const [userName, setUserName] = useState("");
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if(user){
-        setUserName(user.displayName);
-      }
-      else{
-        setUserName("");
-      }
+  // const [userName, setUserName] = useState("");
+  // useEffect(() => {
+  //   auth.onAuthStateChanged((user) => {
+  //     if(user){
+  //       setUserName(user.displayName);
+  //     }
+  //     else{
+  //       setUserName("");
+  //     }
       
-    });
-  },[]);
+  //   });
+  // },[]);
   return (
     <>
     <Router>
@@ -34,7 +35,9 @@ function App() {
         <Route path="/photographers" element={<Photographers />} />
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Signin />} />
-        <Route path="/dashboard" element={<Dashboard name={userName}/>} />
+        {/* <Route path="/dashboard" element={<Protected Component={Dashboard} />} /> */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path="/dashboard" element={<Dashboard name={userName}/>} /> */}
 
       </Route>
     </Routes>

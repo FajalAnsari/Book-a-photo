@@ -7,8 +7,10 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import {  useNavigate  } from "react-router-dom";
 import {  auth } from "../../firebase";
 import { toast } from "react-toastify";
+import './Register.css';
 function Register() {
   const navigate = useNavigate();
+  const [errorMsg, setErrorMsg] = useState("");
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,19 +24,24 @@ function Register() {
 
   const handleFormSubmit = event => {
     event.preventDefault();
+      
+   
     // Write logic to submit the form data to the server
     if(username!=="" && password!==""){
       signInWithEmailAndPassword(auth, username, password).then(()=> {
-        navigate('/dashboard');
-  
+         toast.success("Success");
+        
+          navigate('/dashboard');
       })
       .catch((err)=>{
         toast.error(err);
+        setErrorMsg(err.message);
       })
       
     }
     else{
       toast.error("Fill the form field");
+      setErrorMsg("Fill the form field");
     }
    
   };
@@ -71,7 +78,7 @@ function Register() {
                   />
                 </div>
                  {/* error message show */}
-                 <span></span>
+                 <b>{errorMsg}</b>
                 <div className='form-group'>
                   <button className='form-control mx-auto m-3 bg-warning p-2'>Login</button>
                 </div>
