@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
@@ -8,6 +8,7 @@ import {  useNavigate  } from "react-router-dom";
 import {  auth } from "../../firebase";
 import { toast } from "react-toastify";
 import './Register.css';
+import Dashboard from '../Dashboard/Dashboard';
 function Register() {
   const navigate = useNavigate();
   const [errorMsg, setErrorMsg] = useState("");
@@ -28,15 +29,35 @@ function Register() {
    
     // Write logic to submit the form data to the server
     if(username!=="" && password!==""){
-      signInWithEmailAndPassword(auth, username, password).then(()=> {
-         toast.success("Success");
+      // const loggeduser = JSON.parse(localStorage.getItem("user"));
+      // if(username === loggeduser.email && password === loggeduser.password){
         
-          navigate('/dashboard');
-      })
-      .catch((err)=>{
-        toast.error(err);
-        setErrorMsg(err.message);
-      })
+        signInWithEmailAndPassword(auth, username, password).then(()=> {
+          // localStorage.setItem("loggedin", true);
+          toast.success("Success");
+         
+           navigate('/dashboard');
+       })
+       .catch((err)=>{
+         toast.error(err);
+         setErrorMsg(err.message);
+       })
+      // }
+      // other condition user login the page
+      // else if(!"user"){
+      //   localStorage.setItem(JSON.stringify("user-login",username));
+      //   signInWithEmailAndPassword(auth, username, password).then(()=> {
+      //     localStorage.setItem("loggedin", true);
+      //     toast.success("Success");
+         
+      //      navigate('/dashboard');
+      //  })
+      //  .catch((err)=>{
+      //    toast.error(err);
+      //    setErrorMsg(err.message);
+      //  })
+      // }
+   
       
     }
     else{
@@ -45,6 +66,11 @@ function Register() {
     }
    
   };
+  useEffect(() => {
+    if(Dashboard.isLoggedin){
+      navigate("/dashboard");
+    }
+  })
   return (
     <>
       <Navbar />

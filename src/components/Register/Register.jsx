@@ -7,12 +7,14 @@ import {  createUserWithEmailAndPassword  } from "firebase/auth";
 import {  auth } from "../../firebase";
 import {  useNavigate  } from "react-router-dom";
 import { toast } from "react-toastify"; 
+import { db } from '../../firebase';
+import {collection, addDoc} from 'firebase/firestore';
 // createUserWithEmailAndPassword(auth, email, password)
 // const auth = getAuth(app);
 function Register() {
-  
+   
   const navigate = useNavigate();
-  
+
 
   // error messages show
   const [errorMsg, setErrorMsg] = useState("");
@@ -20,7 +22,8 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  let item ={username,email,password}
+  const database = collection(db, 'users');
+  // let item ={username,email,password}
   const handleUsernameChange = event => {
     setUsername(event.target.value);
   };
@@ -47,11 +50,16 @@ function Register() {
     else{
       if(password === confirmPassword){
         
-           localStorage.setItem("user",JSON.stringify(item));
-        createUserWithEmailAndPassword(auth, email, password).then( ()=>{
-       
+          //  localStorage.setItem("user",JSON.stringify(item));
+        createUserWithEmailAndPassword(auth, email, password).then(async (res)=>{
+        
 
-        //   const user =res.user;
+           const user =res.user;
+          await addDoc(collection(db, "users"),{
+            
+            username,
+            email,
+           });
         //  await updateProfile(user, {displayName: username,});
           toast.success("Your Account has been created");
           navigate('/signin');
@@ -147,6 +155,8 @@ function Register() {
       <Footer />
     </>
   );
+
+
 }
 
 export default Register;
